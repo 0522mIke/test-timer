@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テスト用タイマー - SPI・CAB対策</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>テスト用タイマー</h1>
+        <p style="color: #666; margin-bottom: 20px;">SPI・CAB対策用</p>
+        
+        <div class="time-input">
+          <label>時間設定</label>
+          <div class="time-inputs">
+              <div class="input-group">
+                  <input type="number" id="minutes" min="0" max="180" value="30">
+                  <label for="minutes">分</label>
+              </div>
+              <div class="input-group">
+                  <input type="number" id="seconds" min="0" max="59" value="0">
+                  <label for="seconds">秒</label>
+              </div>
+          </div>
+      </div>
+
+        <div class="preset-times">
+            <button class="preset-btn" onclick="setPresetTime(15)">15分</button>
+            <button class="preset-btn" onclick="setPresetTime(30)">30分</button>
+            <button class="preset-btn" onclick="setPresetTime(45)">45分</button>
+            <button class="preset-btn" onclick="setPresetTime(60)">60分</button>
+        </div>
+
+        <div class="timer-display" id="timerDisplay">00:00</div>
+
+        <div class="controls">
+            <button class="btn btn-start" id="startBtn" onclick="startTimer()">スタート</button>
+            <button class="btn btn-pause" id="pauseBtn" onclick="pauseTimer()" disabled>一時停止</button>
+            <button class="btn btn-reset" onclick="resetTimer()">リセット</button>
+        </div>
+
+        <div class="notifications">
+            <h3>通知設定</h3>
+            <div class="notification-item">
+                <input type="checkbox" id="notify10min" checked>
+                <label for="notify10min">10分前に通知</label>
+            </div>
+            <div class="notification-item">
+                <input type="checkbox" id="notify5min" checked>
+                <label for="notify5min">5分前に通知</label>
+            </div>
+            <div class="notification-item">
+                <input type="checkbox" id="notify1min" checked>
+                <label for="notify1min">1分前に通知</label>
+            </div>
+            <div class="notification-item">
+                <input type="checkbox" id="notify10sec" checked>
+                <label for="notify10sec">10秒前に通知</label>
+            </div>
+            <div class="notification-item">
+                <input type="checkbox" id="notifyFinish" checked>
+                <label for="notifyFinish">終了時に通知（アラーム＋「終了しました」音声）</label>
+            </div>
+        </div>
+
+        <div class="stats">
+            <h3>今日の学習記録</h3>
+            <div class="stat-item">
+                <span>実行回数</span>
+                <span id="sessionCount">0回</span>
+            </div>
+            <div class="stat-item">
+                <span>累計時間</span>
+                <span id="totalTime">0分</span>
+            </div>
+            <div class="stat-item">
+                <span>平均時間</span>
+                <span id="avgTime">0分</span>
+            </div>
+        </div>
+    
+        <div class="footer">
+      <div class="disclaimer">
+          <h4>ご利用について</h4>
+          <p>模擬テストの時間配分をつかむためにバイブコーディングにて数分で開発しました。テスト対策や試験対策としてご活用ください。</p>
+          <p>個人開発のためサービス終了する場合がございますのでご理解ください。</p>
+          <p>学習記録はブラウザを閉じるまでのみ保存されます。</p>
+      </div>
+  </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
