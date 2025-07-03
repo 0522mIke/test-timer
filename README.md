@@ -16,7 +16,7 @@ SPI、CABなどの模擬テスト時間配分を効率的に習得するため�
 - レスポンシブデザイン対応
 
 ## デモ
-[https://ユーザー名.github.io/リポジトリ名](https://0522mike.github.io/test-timer/)
+https://0522mike.github.io/test-timer/
 
 ## 使い方
 1. テスト時間を入力
